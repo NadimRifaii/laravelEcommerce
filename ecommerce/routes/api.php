@@ -3,6 +3,7 @@
 // use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrederedItemsController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,5 +42,9 @@ Route::controller(ProductsController::class)->group(function(){
     Route::delete('deleteProduct','deleteProduct');
     Route::get('getAllProducts','getAllProducts');
 });
-
+Route::controller(OrederedItemsController::class)->group(function(){
+    Route::post('createOrderedItem','createOrderedItem');
+    Route::put('updateOrderedItem','updateOrderedItem');
+    Route::delete('deleteOrderedItem','deleteOrderedItem');
+});
 Route::get('/test',[TestController::class,'test']);
