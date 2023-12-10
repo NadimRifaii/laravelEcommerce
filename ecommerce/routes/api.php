@@ -3,6 +3,7 @@
 // use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
@@ -31,6 +32,12 @@ Route::controller(OrderController::class)->group(function(){
     Route::post('createOrder','insertOrder');
     Route::put('updateOrder','updateOrder');
     Route::delete('deleteOrder','deleteOrder');
+});
+
+Route::controller(ProductsController::class)->group(function(){
+    Route::post('createProduct','insertProduct');
+    Route::post('updateProduct','updateProduct');
+    Route::post('deleteProduct','deleteProduct');
 });
 
 Route::get('/test',[TestController::class,'test']);

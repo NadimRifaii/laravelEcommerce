@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Product extends Model
 {
     use HasFactory;
     public function user(){
-        return $this->belongsTo('users');// 1 to
+        return $this->belongsTo('users');
     }
     public function orderedItems(){
-        return $this->hasMany('ordered_items');
+        return $this->belongsTo('ordered_items');
     }
 }
