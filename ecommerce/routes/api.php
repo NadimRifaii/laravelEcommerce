@@ -2,6 +2,7 @@
 
 // use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
@@ -26,4 +27,10 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
 });
+Route::controller(OrderController::class)->group(function(){
+    Route::post('createOrder','insertOrder');
+    Route::put('updateOrder','updateOrder');
+    Route::delete('deleteOrder','deleteOrder');
+});
+
 Route::get('/test',[TestController::class,'test']);

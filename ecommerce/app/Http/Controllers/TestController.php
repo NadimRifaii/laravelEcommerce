@@ -12,8 +12,14 @@ class TestController extends Controller
     }
     public function test(){
             $user = Auth::user();
-            echo json_encode([
-                'user' => $user
-            ]);
+            if($user->message){
+                echo json_encode([
+                    'message'=>'Error'
+                ]);
+            }else{
+                echo json_encode([
+                    'user' => $user
+                ]);
+            }
     }
 }
