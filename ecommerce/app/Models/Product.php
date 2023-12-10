@@ -9,9 +9,9 @@ class Product extends Model
 {
     use HasFactory;
     public function user(){
-        return $this->belongsTo('users');
+        return $this->belongsTo(Order::class);
     }
     public function orderedItems(){
-        return $this->belongsTo('ordered_items');
+        return $this->belongsTo(OrderedItems::class);
     }
 }

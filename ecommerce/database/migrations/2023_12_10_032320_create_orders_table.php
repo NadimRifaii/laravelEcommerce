@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('ordered_item_id')->constrained('ordered_items');
             $table->string('name');
             $table->float('total_amount',10,2)->default(0);
             $table->timestamps();

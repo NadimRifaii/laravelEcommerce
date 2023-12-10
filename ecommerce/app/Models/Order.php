@@ -9,9 +9,9 @@ class Order extends Model
 {
     use HasFactory;
     public function user(){
-        return $this->belongsTo('users');// 1 to
+        return $this->belongsTo(User::class);// 1 to
     }
     public function orderedItems(){
-        return $this->hasMany('ordered_items');
+        return $this->hasMany(OrderedItems::class);
     }
 }
