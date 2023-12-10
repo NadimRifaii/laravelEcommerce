@@ -37,8 +37,9 @@ Route::controller(OrderController::class)->group(function(){
 
 Route::controller(ProductsController::class)->group(function(){
     Route::post('createProduct','insertProduct');
-    Route::post('updateProduct','updateProduct');
-    Route::post('deleteProduct','deleteProduct');
+    Route::put('updateProduct','updateProduct');
+    Route::delete('deleteProduct','deleteProduct');
+    Route::get('getAllProducts','getAllProducts');
 });
 
 Route::get('/test',[TestController::class,'test']);
