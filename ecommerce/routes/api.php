@@ -32,6 +32,7 @@ Route::controller(OrderController::class)->group(function(){
     Route::post('createOrder','insertOrder');
     Route::put('updateOrder','updateOrder');
     Route::delete('deleteOrder','deleteOrder');
+    Route::get('getAllOrders','getAllOrders');
 });
 
 Route::controller(ProductsController::class)->group(function(){

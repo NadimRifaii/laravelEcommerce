@@ -56,4 +56,17 @@ class OrderController extends Controller
             return response()->json(['message' => 'Order deleted successfully']);
         }
     }
+    public function getAllOrders()
+    {
+        $user = Auth::user();
+
+        if ($user->message) {
+            return response()->json(['message' => $user->message], 403);
+        }
+
+        // Retrieve all orders
+        $orders = Order::all();
+
+        return response()->json(['orders' => $orders]);
+    }
 }
